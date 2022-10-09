@@ -46,12 +46,14 @@ public class CloudController {
         
     }
     
-    @DeleteMapping("/{id}")  
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id){
         cloudService.deleteCloud(id);
     }
     
     @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCloudAll(){
         cloudService.deleteCloudAll();
     }

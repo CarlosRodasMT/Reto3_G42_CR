@@ -46,11 +46,13 @@ public class CategoryController {
     }
     
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id){
         categoryService.deleteCategory(id);
     }
     
     @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategoryAll(){
         categoryService.deleteCategoryAll();
     }

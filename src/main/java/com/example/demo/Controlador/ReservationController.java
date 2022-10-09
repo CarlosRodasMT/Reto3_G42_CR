@@ -45,12 +45,14 @@ public class ReservationController {
         return reservationService.update(reservation);
     }
     
-    @DeleteMapping("/{id}")  
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id){
         reservationService.deleteReservation(id);
     }
 
     @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteReservationAll(){
         reservationService.deleteReservationAll();
     }

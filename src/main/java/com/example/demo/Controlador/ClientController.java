@@ -46,12 +46,14 @@ public class ClientController {
         
     }
     
-    @DeleteMapping("/{id}")  
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id){
         clientService.deleteClient(id);
     }
     
     @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteClientAll(){
         clientService.deleteClientAll();
     }

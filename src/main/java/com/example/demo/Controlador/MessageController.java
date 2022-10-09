@@ -46,12 +46,14 @@ public class MessageController {
         
     }
     
-    @DeleteMapping("/{id}")  
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id){
         messageService.deleteMessage(id);
     }
     
     @DeleteMapping("/all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteMessageAll(){
         messageService.deleteMessageAll();
     }
