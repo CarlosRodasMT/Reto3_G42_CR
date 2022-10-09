@@ -60,5 +60,9 @@ public class ClientService {
         Optional<Client> client1 = clientRepository.getClient(id);
         if(!client1.isEmpty()){clientRepository.deleteClient(id);} 
     }
+    
+    public void deleteClientAll(){
+        clientRepository.deleteClientAll();
+    }
         
 }

@@ -50,4 +50,9 @@ public class ClientController {
     public void deleteCategory(@PathVariable("id") int id){
         clientService.deleteClient(id);
     }
+    
+    @DeleteMapping("/all")
+    public void deleteClientAll(){
+        clientService.deleteClientAll();
+    }
 }

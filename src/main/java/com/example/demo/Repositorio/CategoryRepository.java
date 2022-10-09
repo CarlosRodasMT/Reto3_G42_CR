@@ -30,5 +30,9 @@ public class CategoryRepository {
        extensionesCrud.deleteById(id);
     }
     
+    public void deleteCategoryAll(){
+       extensionesCrud.deleteAll();
+    }
+    
     
 }

@@ -57,5 +57,9 @@ public class CloudService {
         if(!cloud1.isEmpty()){cloudRepository.deleteCloud(id);} 
     }
     
+    public void deleteCloudAll(){
+        cloudRepository.deleteCloudAll();
+    }
+    
 
 }

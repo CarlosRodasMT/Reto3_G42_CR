@@ -50,4 +50,9 @@ public class CategoryController {
         categoryService.deleteCategory(id);
     }
     
+    @DeleteMapping("/all")
+    public void deleteCategoryAll(){
+        categoryService.deleteCategoryAll();
+    }
+    
 }

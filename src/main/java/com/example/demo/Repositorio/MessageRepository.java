@@ -29,5 +29,9 @@ public class MessageRepository {
     public void deleteMessage(int id){
        extensionesCrud.deleteById(id);
     }
+    
+    public void deleteMessageAll(){
+       extensionesCrud.deleteAll();
+    }
 
 }

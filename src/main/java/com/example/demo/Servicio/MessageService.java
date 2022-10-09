@@ -54,4 +54,8 @@ public class MessageService {
         Optional<Message> message1 = messageRepository.getMessage(id);
         if(!message1.isEmpty()){messageRepository.deleteMessage(id);} 
     }
+    
+    public void deleteMessageAll(){
+        messageRepository.deleteMessageAll();
+    }
 }

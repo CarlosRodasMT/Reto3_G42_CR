@@ -59,4 +59,8 @@ public class ReservationService {
         if(!reservation1.isEmpty()){reservationRepository.deleteReservation(id);} 
     }
     
+    public void deleteReservationAll(){
+        reservationRepository.deleteReservationAll();
+    }
+    
 }

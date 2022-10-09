@@ -49,4 +49,10 @@ public class ReservationController {
     public void deleteCategory(@PathVariable("id") int id){
         reservationService.deleteReservation(id);
     }
+
+    @DeleteMapping("/all")
+    public void deleteReservationAll(){
+        reservationService.deleteReservationAll();
+    }
+    
 }

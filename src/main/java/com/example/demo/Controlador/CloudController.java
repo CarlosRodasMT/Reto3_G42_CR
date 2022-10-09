@@ -50,5 +50,10 @@ public class CloudController {
     public void deleteCategory(@PathVariable("id") int id){
         cloudService.deleteCloud(id);
     }
+    
+    @DeleteMapping("/all")
+    public void deleteCloudAll(){
+        cloudService.deleteCloudAll();
+    }
 
 }

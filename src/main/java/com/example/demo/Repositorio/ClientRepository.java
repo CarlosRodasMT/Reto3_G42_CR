@@ -30,4 +30,8 @@ public class ClientRepository {
        extensionesCrud.deleteById(id);
     }
     
+    public void deleteClientAll(){
+       extensionesCrud.deleteAll();
+    }
+    
 }

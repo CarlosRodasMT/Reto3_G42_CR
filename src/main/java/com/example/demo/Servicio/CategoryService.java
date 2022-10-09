@@ -55,4 +55,8 @@ public class CategoryService {
         if(!category1.isEmpty()){categoryRepository.deleteCategory(id);} 
     }
     
+    public void deleteCategoryAll(){
+        categoryRepository.deleteCategoryAll();
+    }
+    
 }

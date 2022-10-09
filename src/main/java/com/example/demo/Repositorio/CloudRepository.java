@@ -28,5 +28,9 @@ public class CloudRepository {
     public void deleteCloud(int id){
        extensionesCrud.deleteById(id);
     }
+    
+    public void deleteCloudAll(){
+       extensionesCrud.deleteAll();
+    }
 
 }

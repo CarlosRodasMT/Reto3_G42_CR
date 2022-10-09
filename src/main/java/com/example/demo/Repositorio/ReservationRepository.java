@@ -28,5 +28,9 @@ public class ReservationRepository {
     public void deleteReservation(int id){
        extensionesCrud.deleteById(id);
     }
+    
+    public void deleteReservationAll(){
+       extensionesCrud.deleteAll();
+    }
 
 }

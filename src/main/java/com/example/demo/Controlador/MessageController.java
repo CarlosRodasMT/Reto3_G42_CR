@@ -51,4 +51,9 @@ public class MessageController {
         messageService.deleteMessage(id);
     }
     
+    @DeleteMapping("/all")
+    public void deleteMessageAll(){
+        messageService.deleteMessageAll();
+    }
+    
 }
