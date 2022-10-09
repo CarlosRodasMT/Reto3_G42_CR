@@ -33,7 +33,26 @@ public class CategoryService {
             }
 
         }
-
-
-    }    
+   } 
+    
+    public Category update (Category category){
+        
+        if(category.getId()!=null){
+            Optional<Category> category1 = categoryRepository.getCategory(category.getId());
+            if(!category1.isEmpty()){
+                if(category.getName()!=null){category1.get().setName(category.getName());}
+                if(category.getDescription()!=null){category1.get().setDescription(category.getDescription());}
+                if(category.getClouds()!=null){category1.get().setClouds(category.getClouds());}
+                categoryRepository.save(category1.get());
+                return category1.get();
+            } else { return category;}    
+            } else { return category;}
+            
+        }
+    
+    public void deleteCategory (int id){
+        Optional<Category> category1 = categoryRepository.getCategory(id);
+        if(!category1.isEmpty()){categoryRepository.deleteCategory(id);} 
+    }
+    
 }

@@ -33,7 +33,25 @@ public class MessageService {
             }
 
         }
-
-
+    }
+    
+    public Message update (Message message){
+        
+        if(message.getIdMessage()!=null){
+            Optional<Message> message1 = messageRepository.getMessage(message.getIdMessage());
+            if(!message1.isEmpty()){
+                if(message.getMessageText()!=null){message1.get().setMessageText(message.getMessageText());}
+                if(message.getCloud()!=null){message1.get().setCloud(message.getCloud());}
+                if(message.getClient()!=null){message1.get().setClient(message.getClient());}
+                messageRepository.save(message1.get());
+                return message1.get();
+            } else { return message;}    
+            } else { return message;}
+            
+    }
+    
+    public void deleteMessage (int id){
+        Optional<Message> message1 = messageRepository.getMessage(id);
+        if(!message1.isEmpty()){messageRepository.deleteMessage(id);} 
     }
 }

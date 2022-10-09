@@ -26,4 +26,9 @@ public class CategoryRepository {
         return extensionesCrud.save(category);
     }
     
+    public void deleteCategory(int id){
+       extensionesCrud.deleteById(id);
+    }
+    
+    
 }

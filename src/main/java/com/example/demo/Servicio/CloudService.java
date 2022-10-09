@@ -32,7 +32,30 @@ public class CloudService {
             }
 
         }
+    }
+    
+    public Cloud update (Cloud cloud){
+        
+        if(cloud.getId()!=null){
+            Optional<Cloud> cloud1 = cloudRepository.getCloud(cloud.getId());
+            if(!cloud1.isEmpty()){
+                if(cloud.getName()!=null){cloud1.get().setName(cloud.getName());}
+                if(cloud.getBrand()!=null){cloud1.get().setBrand(cloud.getBrand());}
+                if(cloud.getYear()!=null){cloud1.get().setYear(cloud.getYear());}
+                if(cloud.getDescription()!=null){cloud1.get().setDescription(cloud.getDescription());}
+                if(cloud.getCategory()!=null){cloud1.get().setCategory(cloud.getCategory());}
+                if(cloud.getMessages()!=null){cloud1.get().setMessages(cloud.getMessages());}
+                if(cloud.getReservations()!=null){cloud1.get().setReservations(cloud.getReservations());}
+                cloudRepository.save(cloud1.get());
+                return cloud1.get();
+            } else { return cloud;}    
+            } else { return cloud;}   
+     }  
+    
+    public void deleteCloud (int id){
+        Optional<Cloud> cloud1 = cloudRepository.getCloud(id);
+        if(!cloud1.isEmpty()){cloudRepository.deleteCloud(id);} 
+    }
+    
 
-
-    }  
 }

@@ -24,5 +24,9 @@ public class CloudRepository {
     public Cloud save(Cloud cloud){
         return extensionesCrud.save(cloud);
     }
+    
+    public void deleteCloud(int id){
+       extensionesCrud.deleteById(id);
+    }
 
 }

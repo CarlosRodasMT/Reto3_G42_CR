@@ -25,5 +25,9 @@ public class MessageRepository {
     public Message save(Message message){
         return extensionesCrud.save(message);
     }
+    
+    public void deleteMessage(int id){
+       extensionesCrud.deleteById(id);
+    }
 
 }

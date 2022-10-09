@@ -26,4 +26,8 @@ public class ClientRepository {
         return extensionesCrud.save(client);
     }
     
+    public void deleteClient(int id){
+       extensionesCrud.deleteById(id);
+    }
+    
 }
