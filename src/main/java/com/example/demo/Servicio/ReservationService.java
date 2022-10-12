@@ -40,15 +40,16 @@ public class ReservationService {
         if(reservation.getIdReservation()!=null){
             Optional<Reservation> reservation1 = reservationRepository.getReservation(reservation.getIdReservation());
             if(!reservation1.isEmpty()){
-                
+            if(reservation.getDevolutionDate().compareTo(reservation.getStartDate())>0){    
                 if(reservation.getStartDate()!=null){reservation1.get().setStartDate(reservation.getStartDate());}
-                if(reservation.getDevolutionDate()!=null){reservation1.get().setDevolutionDate(reservation.getDevolutionDate());}
+                if(reservation.getDevolutionDate()!=null){reservation1.get().setDevolutionDate(reservation.getDevolutionDate());}                 
                 if(reservation.getStatus()!=null){reservation1.get().setStatus(reservation.getStatus());}
-                if(reservation.getCloud()!=null){reservation1.get().setCloud(reservation.getCloud());}
+                /*if(reservation.getCloud()!=null){reservation1.get().setCloud(reservation.getCloud());}*/
                 if(reservation.getScore()!=null){reservation1.get().setScore(reservation.getScore());}
                 
                 reservationRepository.save(reservation1.get());
                 return reservation1.get();
+            } else { return reservation;}  
             } else { return reservation;}    
             } else { return reservation;}
             

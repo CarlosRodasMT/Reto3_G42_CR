@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity  /*declara la clase como una tabla */
@@ -29,7 +30,8 @@ public class Reservation {
     @JsonIgnoreProperties({"reservations", "messages"})
     private Client client;
     
-    private String score;  
+   @OneToOne(mappedBy="reservation")
+    private Score score;  
 
     public Integer getIdReservation() {
         return idReservation;
@@ -79,11 +81,11 @@ public class Reservation {
         this.client = client;
     }
 
-    public String getScore() {
+    public Score getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(Score score) {
         this.score = score;
     }
 

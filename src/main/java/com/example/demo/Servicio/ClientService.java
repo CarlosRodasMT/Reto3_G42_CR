@@ -42,7 +42,7 @@ public class ClientService {
         if(client.getIdClient()!=null){
             Optional<Client> client1 = clientRepository.getClient(client.getIdClient());
             if(!client1.isEmpty()){
-                if(client.getEmail()!=null){client1.get().setEmail(client.getEmail());}
+                /*if(client.getEmail()!=null){client1.get().setEmail(client.getEmail());}*/
                 if(client.getPassword()!=null){client1.get().setPassword(client.getPassword());}
                 if(client.getName()!=null){client1.get().setName(client.getName());}
                 if(client.getAge()!=null){client1.get().setAge(client.getAge());}
@@ -58,8 +58,16 @@ public class ClientService {
     
     public void deleteClient (int id){
         Optional<Client> client1 = clientRepository.getClient(id);
-        if(!client1.isEmpty()){clientRepository.deleteClient(id);} 
+        if(!client1.isEmpty()){
+            if(client1.get().getMessages().isEmpty()){
+                if(client1.get().getReservations().isEmpty()){                
+                    {clientRepository.deleteClient(id);} 
+                }
+            }
+        }
     }
+    
+    
     
     public void deleteClientAll(){
         clientRepository.deleteClientAll();
