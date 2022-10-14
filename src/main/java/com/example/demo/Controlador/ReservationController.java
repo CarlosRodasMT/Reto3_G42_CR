@@ -1,5 +1,7 @@
 package com.example.demo.Controlador;
 
+import com.example.demo.Modelo.DTOs.CompletedAndCancelled;
+import com.example.demo.Modelo.DTOs.TotalAndClient;
 import com.example.demo.Modelo.Reservation;
 import com.example.demo.Servicio.ReservationService;
 import java.util.List;
@@ -60,4 +62,21 @@ public class ReservationController {
         reservationService.deleteReservationAll();
     }
     
+    @GetMapping("/report-dates/{fecha1}/{fecha2}")
+    public List<Reservation> getReservationsBetweenDatesReports(@PathVariable("fecha1") String fecha1, @PathVariable("fecha2") String fecha2){
+        
+        return reservationService.getReservationsBetweenDatesReport(fecha1, fecha2);
+        
+    }   
+    
+    @GetMapping("/report-status")
+    public CompletedAndCancelled getReservationStatusReport(){
+        return reservationService.getReservationStatusReport();
+    }
+    
+    @GetMapping("/report-clients")
+        public List<TotalAndClient> getTopClientsReport(){
+        return reservationService.getTopClientsReport();
+    }
+
 }
