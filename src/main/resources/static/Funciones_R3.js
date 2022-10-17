@@ -1,6 +1,6 @@
 function leerDatos(tipo){
         $.ajax({
-            url:"http://localhost:8080/api/"+tipo+"/all",
+            url:"http://132.145.216.225:8080/api/"+tipo+"/all",
             type:"GET",
             datatype:"JSON",
             success:function(respuesta){
@@ -177,7 +177,7 @@ function verDetalle(){
     
     let myTable = '<table class="table-auto text-gray-600 text-center text-sm">';
     $.ajax({
-        url:"http://localhost:8080/api/"+tipo+"/all",
+        url:"http://132.145.216.225:8080/api/"+tipo+"/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -506,7 +506,7 @@ function crearReg(tipo){
     let dataToSend=JSON.stringify(myData);
     if (tipo=="Reservation" && inicio>fin){}else{
     $.ajax({ //Llamo al método AJAX
-        url:"http://localhost:8080/api/"+tipo+"/save", //Dirección del módulo
+        url:"http://132.145.216.225:8080/api/"+tipo+"/save", //Dirección del módulo
         type:"POST", //Tipo post para enviar
         data:dataToSend, //Datos a enviar
         contentType:"application/JSON", //Le indico al servidor en qué formato le envío la info
@@ -659,7 +659,7 @@ function ActualizaReg(){
     let dataToSend=JSON.stringify(myData);
     
     $.ajax({ //Llamo al método AJAX
-        url:"http://localhost:8080/api/"+tipo+"/update", //Dirección del módulo
+        url:"http://132.145.216.225:8080/api/"+tipo+"/update", //Dirección del módulo
         type:"PUT", //Tipo post para enviar
         data:dataToSend, //Datos a enviar
         contentType:"application/JSON", //Le indico al servidor en qué formato le envío la info
@@ -735,7 +735,7 @@ function eliminarScore(idReservation, idScore, tipo){
     let myData={id:idScore}; //Almaceno id traída desde el pintar
     let dataToSend=JSON.stringify(myData); //Convierto en JSON
         $.ajax({ //Llamo al método AJAX
-            url:"http://localhost:8080/api/Score/"+idScore, //Dirección del módulo
+            url:"http://132.145.216.225:8080/api/Score/"+idScore, //Dirección del módulo
             type:"DELETE", //Tipo post para enviar
             data:dataToSend, //Datos a enviar
             contentType:"application/JSON", //Le indico al servidor en qué formato le envío la info
@@ -762,7 +762,7 @@ function eliminar(id, tipo){
     let myData={id:id}; //Almaceno id traída desde el pintar
     let dataToSend=JSON.stringify(myData); //Convierto en JSON
         $.ajax({ //Llamo al método AJAX
-            url:"http://localhost:8080/api/"+tipo+"/"+id, //Dirección del módulo
+            url:"http://132.145.216.225:8080/api/"+tipo+"/"+id, //Dirección del módulo
             type:"DELETE", //Tipo post para enviar
             data:dataToSend, //Datos a enviar
             contentType:"application/JSON", //Le indico al servidor en qué formato le envío la info
@@ -782,7 +782,7 @@ function eliminar(id, tipo){
 function listar(tipo){
 
     $.ajax({
-        url:"http://localhost:8080/api/"+tipo+"/all",
+        url:"http://132.145.216.225:8080/api/"+tipo+"/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -827,7 +827,7 @@ let mySelectCloud = ""
 let mySelectCat = ""
 
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://132.145.216.225:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -840,7 +840,7 @@ let mySelectCat = ""
         });
 
     $.ajax({
-        url:"http://localhost:8080/api/Cloud/all",
+        url:"http://132.145.216.225:8080/api/Cloud/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -854,7 +854,7 @@ let mySelectCat = ""
         });
 
     $.ajax({
-        url:"http://localhost:8080/api/Category/all",
+        url:"http://132.145.216.225:8080/api/Category/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){        
@@ -888,7 +888,7 @@ function calificar(puntaje){
     
     let myTable = '<table class="table-auto text-gray-600 text-center text-sm">';
     $.ajax({
-        url:"http://localhost:8080/api/"+tipo+"/all",
+        url:"http://132.145.216.225:8080/api/"+tipo+"/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -1021,7 +1021,7 @@ function close_window(){
 
 function Reporte_Fecha(startDate, devolutionDate){
     let myTable = '<table class="table-auto text-gray-600 text-center text-sm">';
-   console.log("http://localhost:8080/api/Reservation/report-dates/"+startDate+"/"+devolutionDate)
+   console.log("http://132.145.216.225:8080/api/Reservation/report-dates/"+startDate+"/"+devolutionDate)
    var inicio = startDate.substr(0,4)+startDate.substr(5,2)+startDate.substr(8,2)
    var fin = devolutionDate.substr(0,4)+devolutionDate.substr(5,2)+devolutionDate.substr(8,2)
     
@@ -1029,7 +1029,7 @@ function Reporte_Fecha(startDate, devolutionDate){
 
 
    $.ajax({
-        url:"http://localhost:8080/api/Reservation/report-dates/"+startDate+"/"+devolutionDate,
+        url:"http://132.145.216.225:8080/api/Reservation/report-dates/"+startDate+"/"+devolutionDate,
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -1055,9 +1055,9 @@ function Reporte_Fecha(startDate, devolutionDate){
 
 function Reporte_Cantidades(tipo){
     let myTable = '<table class="table-auto text-gray-600 text-center text-sm">';
-    console.log("http://localhost:8080/api/Reservation/"+tipo)
+    console.log("http://132.145.216.225:8080/api/Reservation/"+tipo)
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/"+tipo,
+        url:"http://132.145.216.225:8080/api/Reservation/"+tipo,
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -1087,9 +1087,9 @@ function Reporte_Cantidades(tipo){
 
 function Reporte_TopClient(tipo){
     let myTable = '<table class="table-auto text-gray-600 text-center text-sm">';
-    console.log("http://localhost:8080/api/Reservation/"+tipo)
+    console.log("http://132.145.216.225:8080/api/Reservation/"+tipo)
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/"+tipo,
+        url:"http://132.145.216.225:8080/api/Reservation/"+tipo,
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
