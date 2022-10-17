@@ -55,6 +55,15 @@ public class MessageService {
         if(!message1.isEmpty()){messageRepository.deleteMessage(id);} 
     }
     
+    /*Otra opción delete
+    public boolean deleteMessage (int id){
+    Boolean d = getMessage(id).map(message -> {
+        messageRepository.deleteMessage(message);
+        return true;
+    }).orElse(false);
+    return d;
+    }*/
+    
     public void deleteMessageAll(){
         messageRepository.deleteMessageAll();
     }
